@@ -19,5 +19,12 @@ public class ProductPrice extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-/**/
+    private Double markup;
+    private Double costPrice; // prix de revient
+    private Double sellingPrice;  // prix de vente
+    private Double discount;
+
+    @OneToOne(mappedBy = "price", fetch = FetchType.LAZY)
+    private Product product;
+
 }

@@ -4,6 +4,8 @@ import com.dagy.cafeheroapi.core.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 import static com.dagy.cafeheroapi.core.constants.Table.PRODUCT_CATEGORY;
 
 @EqualsAndHashCode(callSuper = true)
@@ -19,6 +21,22 @@ public class ProductCategory extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String reference;
+
+    @Column(unique = true, nullable = false)
+    private String title;
+
+    @Column
+    private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_category_id")
+    private ProductCategory parentCategory;
+
+    @OneToMany(mappedBy = "productCategory")
+    private List<ProductBasic> products;
+
+    public ProductCategory(Long id) {
+        this.id = id;
+    }
 
 }

@@ -15,9 +15,14 @@ import static com.dagy.cafeheroapi.core.constants.Table.PRODUCT_TAX;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductTax extends BaseEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String description;
+    private double percent;
+
+    public ProductTax(Long id) {
+        this.id = id;
+    }
 
 }

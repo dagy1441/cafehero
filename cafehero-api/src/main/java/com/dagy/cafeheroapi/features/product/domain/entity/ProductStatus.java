@@ -4,6 +4,8 @@ import com.dagy.cafeheroapi.core.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 import static com.dagy.cafeheroapi.core.constants.Table.PRODUCT_STATUS;
 
 @EqualsAndHashCode(callSuper = true)
@@ -19,5 +21,15 @@ public class ProductStatus  extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String title;
+    private String description;
+    @OneToMany(mappedBy = "status", fetch = FetchType.LAZY)
+    private List<ProductBasic> productBasics;
+
+    public ProductStatus(Long id) {
+        this.id = id;
+    }
+
+
 
 }

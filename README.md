@@ -1,4 +1,4 @@
-# Stocky
+# Cafehero
 Stocky is a fullstack web application built with Java, Spring Boot, and Angular that helps busy store owners manage all of their stores in one place.
 This app is designed to be both robust and user-friendly, with a sleek and modern interface.
 
@@ -24,7 +24,7 @@ Stocky is built using the following technologies and tools:
 To run Stocky locally, follow these steps:
 
 1. Clone the repository:
-   `git clone https://github.com/your-username/stocky.git`
+   `git clone https://github.com/your-username/cafehero.git`
 
 2. Navigate to the project directory: `cd stocky`
 3. Install dependencies: `mvn install`
@@ -38,4 +38,4 @@ Once you have Stocky up and running, you can start managing your stores, product
 Stocky is released under the MIT License.
 
 ## Author
-[Aworo James: james.aworo@outlook.com](james.aworo@outlook.com)
+[Dagnogo Yaya: dagnogo.yaya@outlook.fr](james.aworo@outlook.com)
