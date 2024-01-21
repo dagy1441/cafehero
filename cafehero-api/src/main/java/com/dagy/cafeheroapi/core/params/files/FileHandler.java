@@ -1,9 +1,9 @@
-package com.dagy.cafeheroapi.core.params;
+package com.dagy.cafeheroapi.core.params.files;
 
 import com.dagy.cafeheroapi.core.constants.enums.Template;
 import org.springframework.core.io.Resource;
 
-public interface FileHandler <R, I> {
+public interface FileHandler<R, I> {
     Resource downloadTemplate(Template template);
 
     // todo:: Before uploading, perform the following

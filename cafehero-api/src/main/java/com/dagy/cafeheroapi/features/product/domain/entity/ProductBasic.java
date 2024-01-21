@@ -11,7 +11,6 @@ import static com.dagy.cafeheroapi.core.constants.Table.PRODUCT_BASIC;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = PRODUCT_BASIC)
-@Getter
 @Data
 @Builder
 @AllArgsConstructor
@@ -51,7 +50,7 @@ public class ProductBasic extends BaseEntity {
     private Integer minAgeLimit;
     private Integer lowStockPoint;
     @Column(columnDefinition = "integer default 0")
-    private final Integer quantity = 0;
+    private  Integer quantity = 0;
 
     public String title() {
         return String.format("%s %s", this.productName, this.brandName);

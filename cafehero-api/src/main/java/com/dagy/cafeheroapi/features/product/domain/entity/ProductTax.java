@@ -18,6 +18,7 @@ public class ProductTax extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String title;
     private String description;
     private double percent;
 

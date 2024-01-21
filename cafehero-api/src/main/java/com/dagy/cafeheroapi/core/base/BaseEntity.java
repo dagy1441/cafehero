@@ -40,5 +40,5 @@ public class BaseEntity {
     private LocalDateTime deletedAt;
 
     @Column(nullable = false)
-    private final Boolean isActiveStatus = Boolean.TRUE;
+    private  Boolean isActiveStatus = Boolean.TRUE;
 }

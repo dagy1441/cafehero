@@ -1,6 +1,5 @@
 package com.dagy.cafeheroapi.features.product.domain.usecase;
 
-import com.dagy.cafeheroapi.core.params.FileHandler;
 import com.dagy.cafeheroapi.features.product.domain.entity.ProductCategory;
 import org.springframework.web.multipart.MultipartFile;
 
