@@ -31,7 +31,9 @@ To run Cafehero locally, follow these steps:
 4. Start the backend server: `mvn spring-boot:run`
 5. Stocky should now be running at `http://localhost:8080`
 6. http://localhost:8082/h2-console
-7. 
+7. https://www.npmjs.com/package/maildev install maildev npm i -g maildev run maildev docker run -p 1080:1080 -p 1025:1025 maildev/maildev
+
+8. http://localhost:8082/swagger-ui/index.html#
 ## Usage
 Once you have Stocky up and running, you can start managing your stores, products, and orders. Use the navigation menu to access different parts of the app, and click on the various buttons and links to perform different actions.
 

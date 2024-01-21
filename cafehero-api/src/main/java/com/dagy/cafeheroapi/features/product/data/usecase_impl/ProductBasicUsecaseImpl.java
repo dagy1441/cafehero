@@ -6,6 +6,7 @@ import com.dagy.cafeheroapi.features.product.domain.entity.ProductBasic;
 import com.dagy.cafeheroapi.features.product.domain.enums.ProductQuantityUpdateType;
 import com.dagy.cafeheroapi.features.product.domain.usecase.IProductBasicUsecase;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Optional;
 
@@ -13,6 +14,7 @@ import static com.dagy.cafeheroapi.features.product.domain.enums.ProductQuantity
 import static com.dagy.cafeheroapi.features.product.domain.enums.ProductQuantityUpdateType.INCREMENT;
 
 
+@Slf4j
 @Usecase
 @RequiredArgsConstructor
 public class ProductBasicUsecaseImpl implements IProductBasicUsecase {

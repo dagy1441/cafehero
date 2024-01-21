@@ -41,7 +41,8 @@ import static org.springframework.http.ResponseEntity.ok;
 import static org.springframework.util.ObjectUtils.isEmpty;
 
 @Slf4j
-@Interactor
+//@Interactor
+@Service
 @RequiredArgsConstructor
 public class ProductCategoryService implements IProductCategoryService, Mapper<ProductCategoryRequest, ProductCategory> {
     public static final String REQUIRE_CATEGORY_ID = "Product category ID is required";

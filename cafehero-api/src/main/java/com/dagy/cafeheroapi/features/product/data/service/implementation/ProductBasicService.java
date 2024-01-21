@@ -14,8 +14,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-//@Service
-@Interactor
+
+//@Interactor
+@Service
 @RequiredArgsConstructor
 public class ProductBasicService implements IProductBasicService, Mapper<ProductBasicRequest, ProductBasic> {
     private final IProductBasicUsecase basicUsecase;

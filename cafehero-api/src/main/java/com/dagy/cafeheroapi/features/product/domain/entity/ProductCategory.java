@@ -30,7 +30,7 @@ public class ProductCategory extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_category_id")
-    private ProductCategory parentCategory;
+    private ProductCategory parent;
 
     @OneToMany(mappedBy = "productCategory")
     private List<ProductBasic> products;
