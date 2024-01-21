@@ -1,5 +1,6 @@
 package com.dagy.cafeheroapi.features.product.domain.usecase;
 
+import com.dagy.cafeheroapi.core.params.files.FileHandler;
 import com.dagy.cafeheroapi.features.product.domain.entity.Product;
 import com.dagy.cafeheroapi.features.product.domain.entity.ProductPrice;
 import org.springframework.data.domain.Page;

@@ -19,12 +19,10 @@ public class Product extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     @OneToOne
     private ProductBasic productBasic;
     @OneToOne
-    private ProductPrice productPrice;
+    private ProductPrice price;
 
     public Product(Long id) {
         this.id = id;

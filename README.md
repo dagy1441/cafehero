@@ -10,7 +10,7 @@ This app is designed to be both robust and user-friendly, with a sleek and moder
 - Search and filter functionality for easy store and product management
 
 ## Technologies
-Stocky is built using the following technologies and tools:
+Cafehero is built using the following technologies and tools:
 
 - Java
 - Spring Boot
@@ -21,7 +21,7 @@ Stocky is built using the following technologies and tools:
 - Tailwind CSS
 
 ## Installation
-To run Stocky locally, follow these steps:
+To run Cafehero locally, follow these steps:
 
 1. Clone the repository:
    `git clone https://github.com/your-username/cafehero.git`
@@ -30,7 +30,8 @@ To run Stocky locally, follow these steps:
 3. Install dependencies: `mvn install`
 4. Start the backend server: `mvn spring-boot:run`
 5. Stocky should now be running at `http://localhost:8080`
-
+6. http://localhost:8082/h2-console
+7. 
 ## Usage
 Once you have Stocky up and running, you can start managing your stores, products, and orders. Use the navigation menu to access different parts of the app, and click on the various buttons and links to perform different actions.
 
