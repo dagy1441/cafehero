@@ -5,7 +5,7 @@ import com.dagy.cafeheroapi.core.params.pages.PageSearchResult;
 import com.dagy.cafeheroapi.features.product.data.request.ProductDiscountRequest;
 import com.dagy.cafeheroapi.features.product.data.request.ProductRequest;
 import com.dagy.cafeheroapi.features.product.data.request.ProductSearchRequest;
-import jakarta.annotation.Resource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 

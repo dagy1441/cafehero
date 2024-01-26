@@ -6,8 +6,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+import static com.dagy.cafeheroapi.core.constants.GlobalConstant.API_PREFIX;
+
+@RequestMapping(value = API_PREFIX + "/product/category")
 public interface ProductCategoryApi {
     @GetMapping(
             value = "get/{id}",
