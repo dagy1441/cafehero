@@ -8,3 +8,4 @@ public interface Mapper<R, M> {
     M toModel(R request);
 
 }
+
