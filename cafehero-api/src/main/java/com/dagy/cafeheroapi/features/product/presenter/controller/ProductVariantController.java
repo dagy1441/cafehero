@@ -1,9 +1,8 @@
-package com.dagy.cafeheroapi.features.product.endpoint.controller;
+package com.dagy.cafeheroapi.features.product.presenter.controller;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductVariantRequest;
 import com.dagy.cafeheroapi.features.product.data.service.contrat.IProductVariantService;
-import com.dagy.cafeheroapi.features.product.data.service.implementation.ProductVariantService;
-import com.dagy.cafeheroapi.features.product.endpoint.api.ProductVariantApi;
+import com.dagy.cafeheroapi.features.product.presenter.api.ProductVariantApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

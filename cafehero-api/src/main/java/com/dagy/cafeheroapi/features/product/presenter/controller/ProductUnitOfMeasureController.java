@@ -1,9 +1,8 @@
-package com.dagy.cafeheroapi.features.product.endpoint.controller;
+package com.dagy.cafeheroapi.features.product.presenter.controller;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductUnitOfMeasureRequest;
 import com.dagy.cafeheroapi.features.product.data.service.contrat.IProductUnitOfMeasureService;
-import com.dagy.cafeheroapi.features.product.data.service.implementation.ProductUnitOfMeasureService;
-import com.dagy.cafeheroapi.features.product.endpoint.api.ProductUnitOfMeasureApi;
+import com.dagy.cafeheroapi.features.product.presenter.api.ProductUnitOfMeasureApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.dagy.cafeheroapi.features.product.endpoint.controller;
+package com.dagy.cafeheroapi.features.product.presenter.controller;
 
 import com.dagy.cafeheroapi.core.params.pages.PageSearchRequest;
 import com.dagy.cafeheroapi.core.params.pages.PageSearchResult;
@@ -6,8 +6,7 @@ import com.dagy.cafeheroapi.features.product.data.request.ProductDiscountRequest
 import com.dagy.cafeheroapi.features.product.data.request.ProductRequest;
 import com.dagy.cafeheroapi.features.product.data.request.ProductSearchRequest;
 import com.dagy.cafeheroapi.features.product.data.service.contrat.IProductService;
-import com.dagy.cafeheroapi.features.product.data.service.implementation.ProductService;
-import com.dagy.cafeheroapi.features.product.endpoint.api.ProductApi;
+import com.dagy.cafeheroapi.features.product.presenter.api.ProductApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;

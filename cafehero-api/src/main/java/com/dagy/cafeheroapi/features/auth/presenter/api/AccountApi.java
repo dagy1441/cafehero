@@ -21,8 +21,7 @@ import java.util.List;
 public interface AccountApi {
     @PostMapping(
             value = "/search",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            consumes = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
             summary = "Rechercher un employé",

@@ -1,9 +1,8 @@
-package com.dagy.cafeheroapi.features.product.endpoint.controller;
+package com.dagy.cafeheroapi.features.product.presenter.controller;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductTaxRequest;
 import com.dagy.cafeheroapi.features.product.data.service.contrat.IProductTaxService;
-import com.dagy.cafeheroapi.features.product.data.service.implementation.ProductTaxService;
-import com.dagy.cafeheroapi.features.product.endpoint.api.ProductTaxApi;
+import com.dagy.cafeheroapi.features.product.presenter.api.ProductTaxApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

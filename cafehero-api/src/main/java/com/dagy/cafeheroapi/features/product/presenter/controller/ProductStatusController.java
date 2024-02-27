@@ -1,9 +1,8 @@
-package com.dagy.cafeheroapi.features.product.endpoint.controller;
+package com.dagy.cafeheroapi.features.product.presenter.controller;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductStatusRequest;
 import com.dagy.cafeheroapi.features.product.data.service.contrat.IProductStatusService;
-import com.dagy.cafeheroapi.features.product.data.service.implementation.ProductStatusService;
-import com.dagy.cafeheroapi.features.product.endpoint.api.ProductStatusApi;
+import com.dagy.cafeheroapi.features.product.presenter.api.ProductStatusApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

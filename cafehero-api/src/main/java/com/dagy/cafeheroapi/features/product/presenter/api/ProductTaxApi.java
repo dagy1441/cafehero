@@ -1,4 +1,4 @@
-package com.dagy.cafeheroapi.features.product.endpoint.api;
+package com.dagy.cafeheroapi.features.product.presenter.api;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductCategoryRequest;
 import com.dagy.cafeheroapi.features.product.data.request.ProductTaxRequest;
@@ -21,7 +21,6 @@ import static com.dagy.cafeheroapi.core.constants.GlobalConstant.API_PREFIX;
 public interface ProductTaxApi {
     @GetMapping(
             value = "get/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
@@ -44,7 +43,6 @@ public interface ProductTaxApi {
     public ResponseEntity<Optional<ProductTaxRequest>> find(@PathVariable Long id);
     @GetMapping(
             value = "all",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(

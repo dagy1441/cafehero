@@ -1,4 +1,4 @@
-package com.dagy.cafeheroapi.features.product.endpoint.api;
+package com.dagy.cafeheroapi.features.product.presenter.api;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductCategoryRequest;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,7 +23,6 @@ import static com.dagy.cafeheroapi.core.constants.GlobalConstant.API_PREFIX;
 public interface ProductCategoryApi {
     @GetMapping(
             value = "get/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
@@ -46,7 +45,6 @@ public interface ProductCategoryApi {
     public ResponseEntity<ProductCategoryRequest> find(@PathVariable Long id);
     @GetMapping(
             value = "all",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
@@ -138,7 +136,6 @@ public interface ProductCategoryApi {
     public ResponseEntity<Optional<Boolean>> remove(@PathVariable Long id);
     @GetMapping(
             value = "search",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(

@@ -41,6 +41,7 @@ public class LoginServiceImpl implements ILoginService {
 
     @Override
     public ResponseEntity<LoginResponse> login(LoginRequest request) {
+        System.out.println("------------- SERVICE ----------------");
         User user = findByUsernameOrThrow(request.getUsername());
         LoginResponse loginResponse = this.authenticateUser(user, request.getPassword());
         return ResponseEntity.ok().body(loginResponse);

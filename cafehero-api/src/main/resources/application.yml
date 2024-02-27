@@ -1,0 +1,32 @@
+cafehero:
+    system:
+        password: dummy@Pask
+        username: system_usr
+jwt:
+    expiration: 86400000
+    issuer: https://mydummy-issuer.com
+    secret: 732@dummy-se3ret3-for-dev-environment21
+server:
+    port: 8080
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: 0210pas5
+        url: jdbc:h2:file:~/cafehero
+        username: sa
+    h2:
+        console:
+            enabled: true
+            settings:
+                web-allow-others: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+        show-sql: false

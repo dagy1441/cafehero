@@ -1,4 +1,4 @@
-package com.dagy.cafeheroapi.features.product.endpoint.api;
+package com.dagy.cafeheroapi.features.product.presenter.api;
 
 import com.dagy.cafeheroapi.core.params.pages.PageSearchRequest;
 import com.dagy.cafeheroapi.core.params.pages.PageSearchResult;
@@ -127,7 +127,6 @@ public interface ProductApi {
 
     @GetMapping(
             value = "search",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
@@ -198,9 +197,7 @@ public interface ProductApi {
     public ResponseEntity<?> uploadBatchService(@RequestParam("file") MultipartFile file) throws IOException;
 
     @GetMapping(
-            value = "/download-template",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            value = "/download-template"
     )
 
     @ResponseBody

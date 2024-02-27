@@ -1,7 +1,7 @@
-package com.dagy.cafeheroapi.features.product.endpoint.api;
+package com.dagy.cafeheroapi.features.product.presenter.api;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductCategoryRequest;
-import com.dagy.cafeheroapi.features.product.data.request.ProductUnitOfMeasureRequest;
+import com.dagy.cafeheroapi.features.product.data.request.ProductStatusRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -17,16 +17,15 @@ import java.util.Optional;
 
 import static com.dagy.cafeheroapi.core.constants.GlobalConstant.API_PREFIX;
 
-@RequestMapping(value = API_PREFIX + "/product/unit-of-measurement")
-public interface ProductUnitOfMeasureApi {
+@RequestMapping(value = API_PREFIX + "/product-status")
+public interface ProductStatusApi {
     @GetMapping(
-            value = "/get/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
+            value = "get/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Rechercher une unité de mesure",
-            description = "Permet de Rechercher une unité de mesure par id. La réponse est l'unité de mesure recherchée"
+            summary = "Rechercher un statut",
+            description = "Permet de Rechercher un statut par id. La réponse est le statut recherché"
     )
     @ApiResponses({
             @ApiResponse(
@@ -39,18 +38,16 @@ public interface ProductUnitOfMeasureApi {
                     content = {@Content(schema = @Schema())}),
             @ApiResponse(
                     responseCode = "500",
-                    content = {@Content(schema = @Schema())})
-    })
-    public ResponseEntity<Optional<ProductUnitOfMeasureRequest>>
-    find(@PathVariable Long id);
+                    content = {@Content(schema = @Schema())})}
+    )
+    public ResponseEntity<Optional<ProductStatusRequest>> find(@PathVariable Long id);
     @GetMapping(
-            value = "/all",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
+            value = "all",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Rechercher toutes les unitées de mesure",
-            description = "Permet de Rechercher toutes les unités de mesure par id. La réponse la liste de toutes unités de mesure"
+            summary = "Rechercher une statut",
+            description = "Permet de Rechercher plusieurs statut . La réponse est une liste de statut"
     )
     @ApiResponses({
             @ApiResponse(
@@ -63,17 +60,17 @@ public interface ProductUnitOfMeasureApi {
                     content = {@Content(schema = @Schema())}),
             @ApiResponse(
                     responseCode = "500",
-                    content = {@Content(schema = @Schema())})
-    })
-    public ResponseEntity<List<ProductUnitOfMeasureRequest>> findMany();
+                    content = {@Content(schema = @Schema())})}
+    )
+    public ResponseEntity<List<ProductStatusRequest>> findMany();
     @PostMapping(
-            value = "/create",
+            value = "create",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Enregistrer une unitée de mesure",
-            description = "Permet d'enregistrer une unité de mesure. La réponse l'unités de mesure enregistrée"
+            summary = "Enregistrer un statut",
+            description = "Permet de Enregistrer un statut. La réponse est le statut enregistré"
     )
     @ApiResponses({
             @ApiResponse(
@@ -86,19 +83,18 @@ public interface ProductUnitOfMeasureApi {
                     content = {@Content(schema = @Schema())}),
             @ApiResponse(
                     responseCode = "500",
-                    content = {@Content(schema = @Schema())})
-    })
-    public ResponseEntity<Optional<ProductUnitOfMeasureRequest>> save(
-            @RequestBody @Valid ProductUnitOfMeasureRequest dto
-    );
+                    content = {@Content(schema = @Schema())})}
+    )
+    public ResponseEntity<Optional<ProductStatusRequest>> save(@RequestBody @Valid ProductStatusRequest dto);
+
     @PutMapping(
-            value = "/update",
+            value = "update",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Modifier une unitée de mesure",
-            description = "Permet modifier une unité de mesure. La réponse l'unités de mesure modifiée"
+            summary = "Modifier un statut",
+            description = "Permet de Modifier un statut par id. La réponse est le statut modifié"
     )
     @ApiResponses({
             @ApiResponse(
@@ -111,19 +107,18 @@ public interface ProductUnitOfMeasureApi {
                     content = {@Content(schema = @Schema())}),
             @ApiResponse(
                     responseCode = "500",
-                    content = {@Content(schema = @Schema())})
-    })
-    public ResponseEntity<Optional<ProductUnitOfMeasureRequest>> update(
-            @RequestBody @Valid ProductUnitOfMeasureRequest dto
-    );
+                    content = {@Content(schema = @Schema())})}
+    )
+    public ResponseEntity<Optional<ProductStatusRequest>> update(@RequestBody @Valid ProductStatusRequest request);
+
     @DeleteMapping(
-            value = "/delete/{id}",
+            value = "delete/{id}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Supprimer une unitée de mesure",
-            description = "Permet de supprimer une unité de mesure. La réponse l'unités de mesure supprimée"
+            summary = "Supprimer un statut",
+            description = "Permet de Supprimer un statut par id. La réponse est le statut supprimer"
     )
     @ApiResponses({
             @ApiResponse(

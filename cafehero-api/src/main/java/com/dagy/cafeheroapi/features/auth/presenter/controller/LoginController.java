@@ -14,6 +14,7 @@ public class LoginController implements LoginApi {
     private final ILoginService loginService;
     @Override
     public ResponseEntity<LoginResponse> login(LoginRequest request) {
+        System.out.println(request);
         return loginService.login(request);
     }
 }

@@ -66,16 +66,14 @@ public class SecurityConfig {
         http
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 //.cors(cors -> cors.disable()) <<--- does not work as documented
-                .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/h2-console/**")
-                )
+                .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions(FrameOptionsConfig::disable))
                 .authorizeHttpRequests((request) -> request
                         .requestMatchers(UI_WHITELIST).permitAll()
                         .requestMatchers(H2_WHITELIST).permitAll()
                         .requestMatchers(AUTH_WHITELIST).permitAll()
                         .requestMatchers(SWAGGER_WHITELIST).permitAll()
-                        .anyRequest().authenticated())
+                        .anyRequest().permitAll())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )

@@ -1,7 +1,7 @@
-package com.dagy.cafeheroapi.features.product.endpoint.api;
+package com.dagy.cafeheroapi.features.product.presenter.api;
 
 import com.dagy.cafeheroapi.features.product.data.request.ProductCategoryRequest;
-import com.dagy.cafeheroapi.features.product.data.request.ProductVariantRequest;
+import com.dagy.cafeheroapi.features.product.data.request.ProductUnitOfMeasureRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -13,19 +13,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.dagy.cafeheroapi.core.constants.GlobalConstant.API_PREFIX;
 
-@RequestMapping(value = API_PREFIX + "/product-variant")
-public interface ProductVariantApi {
+@RequestMapping(value = API_PREFIX + "/product/unit-of-measurement")
+public interface ProductUnitOfMeasureApi {
     @GetMapping(
-            value = "/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
+            value = "/get/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Rechercher une variante du produit",
-            description = "Permet de Rechercher une variante du produit par id. La réponse est la variante du produit recherchée"
+            summary = "Rechercher une unité de mesure",
+            description = "Permet de Rechercher une unité de mesure par id. La réponse est l'unité de mesure recherchée"
     )
     @ApiResponses({
             @ApiResponse(
@@ -40,15 +40,38 @@ public interface ProductVariantApi {
                     responseCode = "500",
                     content = {@Content(schema = @Schema())})
     })
-    public ResponseEntity<ProductVariantRequest> findOne(@PathVariable Long id);
+    public ResponseEntity<Optional<ProductUnitOfMeasureRequest>>
+    find(@PathVariable Long id);
+    @GetMapping(
+            value = "/all",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @Operation(
+            summary = "Rechercher toutes les unitées de mesure",
+            description = "Permet de Rechercher toutes les unités de mesure par id. La réponse la liste de toutes unités de mesure"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    content = {@Content(
+                            schema = @Schema(implementation = ProductCategoryRequest.class),
+                            mediaType = "application/json")}),
+            @ApiResponse(
+                    responseCode = "404",
+                    content = {@Content(schema = @Schema())}),
+            @ApiResponse(
+                    responseCode = "500",
+                    content = {@Content(schema = @Schema())})
+    })
+    public ResponseEntity<List<ProductUnitOfMeasureRequest>> findMany();
     @PostMapping(
-            value = "",
+            value = "/create",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Enregister une variante du produit",
-            description = "Permet d'enregister une variante du produit par id. La réponse est la variante du produit enregistrée"
+            summary = "Enregistrer une unitée de mesure",
+            description = "Permet d'enregistrer une unité de mesure. La réponse l'unités de mesure enregistrée"
     )
     @ApiResponses({
             @ApiResponse(
@@ -63,38 +86,17 @@ public interface ProductVariantApi {
                     responseCode = "500",
                     content = {@Content(schema = @Schema())})
     })
-    public ResponseEntity<ProductVariantRequest> save(@RequestBody @Valid ProductVariantRequest request);
-    @GetMapping(
-            value = "",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    @Operation(
-            summary = "Rechercher toutes les variante d'un produit",
-            description = "Permet rechercher toutes les variante d'un produit . La réponse est la liste des variantes des produits"
-    )
-    @ApiResponses({
-            @ApiResponse(
-                    responseCode = "200",
-                    content = {@Content(
-                            schema = @Schema(implementation = ProductCategoryRequest.class),
-                            mediaType = "application/json")}),
-            @ApiResponse(
-                    responseCode = "404",
-                    content = {@Content(schema = @Schema())}),
-            @ApiResponse(
-                    responseCode = "500",
-                    content = {@Content(schema = @Schema())})
-    })
-    public ResponseEntity<List<ProductVariantRequest>> findAll();
+    public ResponseEntity<Optional<ProductUnitOfMeasureRequest>> save(
+            @RequestBody @Valid ProductUnitOfMeasureRequest dto
+    );
     @PutMapping(
-            value = "",
+            value = "/update",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Operation(
-            summary = "Modifier toutes une variante d'un produit",
-            description = "Permet modifier toutes une variante d'un produit . La réponse est la variante du produit modifiée"
+            summary = "Modifier une unitée de mesure",
+            description = "Permet modifier une unité de mesure. La réponse l'unités de mesure modifiée"
     )
     @ApiResponses({
             @ApiResponse(
@@ -109,5 +111,30 @@ public interface ProductVariantApi {
                     responseCode = "500",
                     content = {@Content(schema = @Schema())})
     })
-    public ResponseEntity<ProductVariantRequest> update(@RequestBody @Valid ProductVariantRequest request);
+    public ResponseEntity<Optional<ProductUnitOfMeasureRequest>> update(
+            @RequestBody @Valid ProductUnitOfMeasureRequest dto
+    );
+    @DeleteMapping(
+            value = "/delete/{id}",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @Operation(
+            summary = "Supprimer une unitée de mesure",
+            description = "Permet de supprimer une unité de mesure. La réponse l'unités de mesure supprimée"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    content = {@Content(
+                            schema = @Schema(implementation = ProductCategoryRequest.class),
+                            mediaType = "application/json")}),
+            @ApiResponse(
+                    responseCode = "404",
+                    content = {@Content(schema = @Schema())}),
+            @ApiResponse(
+                    responseCode = "500",
+                    content = {@Content(schema = @Schema())})
+    })
+    public ResponseEntity<Optional<Boolean>> remove(@PathVariable Long id);
 }

@@ -24,8 +24,8 @@ public interface LoginApi {
             produces = MediaType.APPLICATION_JSON_VALUE
             )
     @Operation(
-            summary = "Rechercher un employé",
-            description = "Permet de rechercher les employées d'une entreprise. La réponse est une liste d'employéé"
+            summary = "Se connecter",
+            description = "Permet à l'utilisateur de se connecter. La réponse est l'utilisateur connecté"
     )
     @ApiResponses({
             @ApiResponse(
